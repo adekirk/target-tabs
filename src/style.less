@@ -1,0 +1,110 @@
+
+
+
+/*------------------------------------*\
+  #TAB-PARAMETERS
+\*------------------------------------*/
+
+@tab-background-base:     white;
+
+@tab-color:               #333;
+@tab-background-color:    #e8f6ff;
+@tab-border-color:        rgba(27, 163, 251, 0.4);
+@tab-active:              white;
+@tab-active-background:   #1BA3FB;
+@tab-hover:               #76c7fc;
+
+@tab-padding:             8px;
+
+
+/*------------------------------------*\
+  #TAB-PANE
+\*------------------------------------*/
+
+main                        { display: block; }                                 // HACK: Internet Explorer IE
+main > *                    { display: none;  }                                 // Hide all tab panes.
+main > *:last-child         { display: block; }                                 // Make the last pane visible by default.
+main > *:target             { display: block; }                                 // Show :target pane.
+main > *:target ~ *         { display: none;  }                                 // And hide everything *after* the :target.
+                
+main > *:before {                                                               // Anti headbutting/padding hack.
+    height: 1000px;                                                             // Prevent #anchor from jumping to the top
+                                                                                // by extending the tab pane to top/above top
+    display: block;                                                             // of page, then pull content back down with
+    margin-top: -1000px;                                                        // a -ve margin.
+  
+    visibility: hidden;
+    content: " ";                                                               // NOTE: Does not work if element has padding or border.
+}
+
+
+
+/*------------------------------------*\
+  #TAB-MENU
+\*------------------------------------*/
+
+.tabs {
+    display: block;
+
+    padding: 0;
+    margin:  @tab-padding 0 @tab-padding 0;
+  
+    font-size: 1.5em;
+
+    background-color: @tab-background-base;
+}
+
+.tabs ul {
+    display:  flex;
+    padding:  0;
+    margin:   0
+}
+
+
+.tab {
+    display: inline-block;    
+    padding: 0;
+    margin:  0;
+
+    background-color: @tab-background-color;      
+} 
+
+.tab a {
+    display: inline-block;  
+    padding: @tab-padding;
+  
+    color: @tab-color;  
+    text-decoration: none;
+  
+    &:hover { background-color: @tab-hover; }
+}
+
+.tab a.active {
+    color:              @tab-active; 
+    background-color:   @tab-active-background;
+}
+
+
+/*------------------------------------*\
+  #TAB-MENU-DESKTOP
+\*------------------------------------*/
+@media only screen and (min-width : 768px) {
+    .tabs {
+        font-size: 1.0em;
+    }
+  
+    .tab {
+        margin-right:   @tab-padding;
+        padding:        0;
+    }
+  
+    .tab a {
+        margin:   0;
+        padding:  @tab-padding * 2;    
+        border:   1px solid @tab-border-color;
+
+        background-color: @tab-background-color;
+
+        &:hover { background-color: @tab-hover; }
+    }  
+}

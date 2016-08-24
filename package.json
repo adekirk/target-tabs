@@ -1,0 +1,28 @@
+{
+  "name": "tabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gist.github.com/d3cdbe7e7a642c679d246ff106fc49ba.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/d3cdbe7e7a642c679d246ff106fc49ba"
+  },
+  "homepage": "https://gist.github.com/d3cdbe7e7a642c679d246ff106fc49ba",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ignore": "^2.0.1",
+    "gulp-less-sourcemap": "^1.4.3",
+    "gulp-livereload": "^3.8.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.9",
+    "path": "^0.12.7"
+  }
+}

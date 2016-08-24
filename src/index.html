@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabs</title>
+
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Tabs</h1>
+
+
+
+    <div class="controls">
+        <select name="options">
+            <option>Option One</option>
+            <option>Option Two</option>
+            <option>Option Three</option>
+            <option>Option Four</option>
+        </select>            
+    </div>
+
+    <nav role="navigation" class="tabs">
+        <ul>
+            <li class="tab"><a href="#view-default">View Default</a></li>
+            <li class="tab"><a href="#view-2">View Two</a></li>
+            <li class="tab"><a href="#view-3">View Three</a></li>
+        </ul>            
+    </nav>
+
+
+    <main role="main">
+        <div id="view-2" class="tab-pane">
+            <h1>View Two</h1>
+        </div>
+
+        <div id="view-3" class="tab-pane">
+            <h1>View Three</h1>
+        </div>
+
+        <div id="view-default" class="tab-pane">
+            <h1>View Default</h1>
+        </div>
+    </main>
+
+
+    <script src="./script.js"></script>
+    <script>
+        tabs.init("view-default");
+    </script>
+</body>
+
+</html>

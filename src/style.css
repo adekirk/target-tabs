@@ -1,0 +1,80 @@
+main > * {
+  display: none;
+  height: 2000px;
+}
+main > *:last-child {
+  display: block;
+}
+main > *:target {
+  display: block;
+}
+main > *:target ~ * {
+  display: none;
+}
+/*------------------------------------*\
+  #TAB-MENU
+\*------------------------------------*/
+.tabs {
+  display: block;
+  padding: 0;
+  margin: 8px 0 8px 0;
+  font-size: 1.5em;
+  background-color: white;
+}
+.tabs ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.tab {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  background-color: #e8f6ff;
+}
+.tab a {
+  display: inline-block;
+  padding: 8px;
+  color: #333;
+  text-decoration: none;
+}
+.tab a:hover {
+  background-color: #76c7fc;
+}
+.tab a.active {
+  color: white;
+  background-color: #1BA3FB;
+}
+/*------------------------------------*\
+  #TAB-MENU-DESKTOP
+\*------------------------------------*/
+@media only screen and (min-width: 768px) {
+  .tabs {
+    font-size: 1.0em;
+  }
+  .tab {
+    margin-right: 8px;
+    padding: 0;
+  }
+  .tab a {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid rgba(27, 163, 251, 0.4);
+    background-color: #e8f6ff;
+  }
+  .tab a:hover {
+    background-color: #76c7fc;
+  }
+  /**
+     * HACK: Anti headbutting/padding hack 
+     * This is an attempt to prevent the browser scrolling the anchor into view/top of the page.
+     */
+  main > .tab-pane:before {
+    height: 500px;
+    display: block;
+    margin-top: -500px;
+    visibility: hidden;
+    content: " ";
+  }
+}
+/*# sourceMappingURL=style.css.map */
